@@ -24,7 +24,7 @@ HAVING d.department_name in ('IT'，'Sales');
 ### 查询2结果：
 ![result1](https://github.com/csy1996/oracle/blob/master/%E6%B5%8B%E8%AF%951/2.png)
 ## 三.查询1与查询2结果分析：
-查询2在反应时间上更快，所以我认为查询2更优。
+查询2在运行结果上反应时间上更快，查询1反应时间比较慢，所以我认为查询2更优。
 ## 四.编写：
 ```
 SELECT d.department_name ,count(e.job_id)as "部门总人数" ,
@@ -33,4 +33,6 @@ FROM hr.departments d, hr.employees e
 WHERE d.department_id = e.department_id and d.department_name = 'IT' or d.department_name = 'Sales'
 GROUP BY department_name 
 ```
+### 优化指导：
+where语句处太过复杂，应该适当减少。
 
