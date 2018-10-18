@@ -32,6 +32,8 @@ FROM hr.departments d, hr.employees e
 WHERE d.department_id = e.department_id and d.department_name = 'IT' or d.department_name = 'Sales'
 GROUP BY department_name 
 ```
+### 查询结果：
+![result1](https://github.com/csy1996/oracle/blob/master/%E6%B5%8B%E8%AF%951/3.png)
 ### 优化指导：
 where语句处太过复杂，应该适当减少。
 ## 四.结果分析：
