@@ -1,6 +1,5 @@
 # 实验一：分析SQL执行计划，执行SQL语句的优化指导
-
-## 一查询1：
+## 一.查询1：
 ```
 SELECT d.department_name，count(e.job_id)as "部门总人数"，
 avg(e.salary)as "平均工资"
@@ -10,7 +9,8 @@ and d.department_name in ('IT'，'Sales')
 GROUP BY department_name;
 ```
 ### 查询1结果：
-## 二查询2：
+![result1](https://github.com/csy1996/oracle/blob/master/%E6%B5%8B%E8%AF%951/1.png)
+## 二.查询2：
 ```
 SELECT d.department_name，count(e.job_id)as "部门总人数"，
 avg(e.salary)as "平均工资"
@@ -19,3 +19,8 @@ WHERE d.department_id = e.department_id
 GROUP BY department_name
 HAVING d.department_name in ('IT'，'Sales');
 ```
+### 查询2结果：
+![result1](https://github.com/csy1996/oracle/blob/master/%E6%B5%8B%E8%AF%951/2.png)
+## 三.查询1与查询2结果分析：
+我认为查询1更优
+
