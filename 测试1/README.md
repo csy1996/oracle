@@ -22,5 +22,5 @@ HAVING d.department_name in ('IT'，'Sales');
 ### 查询2结果：
 ![result1](https://github.com/csy1996/oracle/blob/master/%E6%B5%8B%E8%AF%951/2.png)
 ## 三.查询1与查询2结果分析：
-我认为查询1更优
+虽然第一次反应时间比查询2反应时间慢，但是在只后的每一次反应时间结果来看，都比2快，所以我认为查询1更优。
 
