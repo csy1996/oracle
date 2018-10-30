@@ -1,1 +1,12 @@
-
+$ sqlplus system/123@pdborcl
+SQL> CREATE ROLE con_res_view;
+Role created.
+SQL> GRANT connect,resource,CREATE VIEW TO con_res_view;
+Grant succeeded.
+SQL> CREATE USER new_user IDENTIFIED BY 123 DEFAULT TABLESPACE users TEMPORARY TABLESPACE temp;
+User created.
+SQL> ALTER USER new_user QUOTA 50M ON users;
+User altered.
+SQL> GRANT con_res_view TO new_user;
+Grant succeeded.
+SQL> exit
