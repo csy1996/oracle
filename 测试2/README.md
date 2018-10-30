@@ -1,5 +1,5 @@
 # 实验2：用户及权限管理
-## 第1步：以system登录到pdborcl，创建角色csy_view和用户csy_user，并授权和分配空间：
+## 一.以system登录到pdborcl，创建角色csy_view和用户csy_user，并授权和分配空间：
 ```sql
 $ sqlplus system/123@pdborcl
 SQL> CREATE ROLE csy_view;
@@ -16,7 +16,7 @@ SQL> exit
 ```
 > 语句“ALTER USER new_user QUOTA 50M ON users;”是指授权new_user用户访问users表空间，空间限额是50M。
 
-## 第2步：新用户csy_user连接到pdborcl，创建表mytable和视图myview，插入数据，最后将myview的SELECT对象权限授予hr用户。
+## 二.新用户csy_user连接到pdborcl，创建表mytable和视图myview，插入数据，最后将myview的SELECT对象权限授予hr用户。
 
 ```sql
 $ sqlplus csy_user/123@pdborcl
@@ -39,7 +39,7 @@ SQL> GRANT SELECT ON myview TO hr;
 Grant succeeded.
 SQL>exit
 ```
-## 第3步：用户hr连接到pdborcl，查询csy_user授予它的视图myview
+## 三.用户hr连接到pdborcl，查询csy_user授予它的视图myview
 
 ```sql
 $ sqlplus hr/123@pdborcl
@@ -50,17 +50,14 @@ zhang
 wang
 SQL> exit
 ```
-
-> 测试一下同学用户之间的表的共享，只读共享和读写共享都测试一下。
-
-## 数据库和表空间占用分析
+## 四.数据库和表空间占用分析
 
 > 当全班同学的实验都做完之后，数据库pdborcl中包含了每个同学的角色和用户。
 > 所有同学的用户都使用表空间users存储表的数据。
 > 表空间中存储了很多相同名称的表mytable和视图myview，但分别属性于不同的用户，不会引起混淆。
 > 随着用户往表中插入数据，表空间的磁盘使用量会增加。
 
-## 查看数据库的使用情况
+## 五.查看数据库的使用情况
 
 以下样例查看表空间的数据库文件，以及每个文件的磁盘占用情况。
 
