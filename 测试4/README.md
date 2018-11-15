@@ -1,0 +1,16 @@
+# 实验4：对象管理
+## 使用的用户和角色
+用户：csy_user 角色：csy密码：5420
+## 分配空间
+```
+ALTER USER csy_user QUOTA UNLIMITED ON USERS;
+ALTER USER csy_user QUOTA UNLIMITED ON USERS02;
+ALTER USER csy_user QUOTA UNLIMITED ON USERS03;
+ALTER USER csy_user ACCOUNT UNLOCK;
+```
+## 分配权限
+```
+GRANT "CONNECT" TO csy_user WITH ADMIN OPTION;（授权成功）
+GRANT "RESOURCE" TO csy_user WITH ADMIN OPTION;（授权成功）
+ALTER USER csy_user DEFAULT ROLE "CONNECT","RESOURCE";（用户已更改）
+```
