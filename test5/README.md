@@ -48,7 +48,7 @@ END MyPack;
 ## 调用函数
 ```sql
 select count(*) from orders;
-select MyPack.Get_SaleAmount(11) AS 部门1应收金额,MyPack.Get_SaleAmount(12) AS 部门2应收金额 from dual;
+select MyPack.Get_SaleAmount(11) AS 部门11应收金额,MyPack.Get_SaleAmount(12) AS 部门12应收金额 from dual;
 ```
 
 ```sql
