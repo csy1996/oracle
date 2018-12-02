@@ -48,7 +48,7 @@ END MyPack;
 ## 调用函数
 ```sql
 select count(*) from orders;
-select MyPack.Get_SaleAmount(1) AS 部门1应收金额,MyPack.Get_SaleAmount(2) AS 部门2应收金额 from dual;
+select MyPack.Get_SaleAmount(11) AS 部门1应收金额,MyPack.Get_SaleAmount(12) AS 部门2应收金额 from dual;
 ```
 
 ```sql
@@ -58,7 +58,7 @@ DECLARE
 BEGIN
   V_EMPLOYEE_ID := 1;
   MYPACK.Get_Employees (  V_EMPLOYEE_ID => V_EMPLOYEE_ID) ;  
-  V_EMPLOYEE_ID := 2;
+  V_EMPLOYEE_ID := 11;
   MYPACK.Get_Employees (  V_EMPLOYEE_ID => V_EMPLOYEE_ID) ;    
 END;
 ```
